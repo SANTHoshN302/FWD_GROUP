@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Booking | RideX</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Go Anywhere with RideX</h1>
+    </header>
+    <main class="main-content">
+        <section class="booking-section">
+            <div class="ride-options">
+                <button id="ride-button" class="active-option">Ride</button>
+                <button id="package-button">Package</button>
+            </div>
+            
+            <script>
+                document.getElementById("package-button").addEventListener("click", () => {
+                    window.location.href = "package.html";
+                });
+            </script>
+            
+            <form class="ride-form">
+                <div class="input-group">
+                    <label for="pickup">Pickup Location</label>
+                    <input type="text" id="pickup" placeholder="Enter pickup location" required>
+                </div>
+                <div class="input-group">
+                    <label for="dropoff">Dropoff Location</label>
+                    <input type="text" id="dropoff" placeholder="Enter dropoff location" required>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+                </div>
+                <button type="button" id="see-prices">See Prices</button>
+            </form>
+        </section>
+        <section class="map-section">
+            <div id="map"></div>
+        </section>
+        <section class="results-section">
+            <h2>Available Rides</h2>
+            <div id="ride-options" class="ride-options-container">
+                <!-- Rides will be dynamically added here -->
+            </div>
+        </section>        
+    </main>
+    <footer class="footer">
+        <p>© 2024 RideX</p>
+    </footer>
+
+    <!-- Add your script -->
+    <script src="script.js"></script>
+
+    <!-- Correct Google Maps API Script -->
+    <script async defer src="https://maps.gomaps.pro/maps/api/js?key=AlzaSyWPBH16XmAvRVbYNlhDGDHNBmbNDZE4Jvc&libraries=places&callback=initMap"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
